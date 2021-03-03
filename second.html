@@ -28,7 +28,7 @@
 </head>
 
 <body>
-  <h1>3D-Model embeded in Web</h3><h3><a href="second.html">Second Model</a></h3>
+  <h1>3D-Model embeded in Web</h1><h3><a href="index.html">Back to First</a></h3>
   <canvas id="renderCanvas" touch-action="none"></canvas>
 
   <script>
@@ -38,7 +38,7 @@
       scene.autoClear = false;
 
       // Camera
-      const camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 1, Math.PI / 2.5, 3, new BABYLON.Vector3(-2, 0, 5));
+      const camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 1, Math.PI / 1, 0, new BABYLON.Vector3(-2, 0, 5));
       camera.wheelPrecision = 100;
       camera.lowerRadiusLimit = 3;
       camera.upperRadiusLimit = 10;
@@ -52,7 +52,7 @@
 
       // load Model
       const assetsManager = new BABYLON.AssetsManager(scene);
-      const modelTask = assetsManager.addMeshTask("car task", "", "model/", "Verpackung.glb");
+      const modelTask = assetsManager.addMeshTask("car task", "", "model/", "Logo2.glb");
       modelTask.onSuccess = function(task) {
         let model = task.loadedMeshes[1];
         camera.setTarget(model.getBoundingInfo().boundingBox.centerWorld );
